@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script type="text/javascript">
+    !function (T, l, y) { var S = T.location, k = "script", D = "instrumentationKey", C = "ingestionendpoint", I = "disableExceptionTracking", E = "ai.device.", b = "toLowerCase", w = "crossOrigin", N = "POST", e = "appInsightsSDK", t = y.name || "appInsights"; (y.name || T[e]) && (T[e] = t); var n = T[t] || function (d) { var g = !1, f = !1, m = { initialize: !0, queue: [], sv: "5", version: 2, config: d }; function v(e, t) { var n = {}, a = "Browser"; return n[E + "id"] = a[b](), n[E + "type"] = a, n["ai.operation.name"] = S && S.pathname || "_unknown_", n["ai.internal.sdkVersion"] = "javascript:snippet_" + (m.sv || m.version), { time: function () { var e = new Date; function t(e) { var t = "" + e; return 1 === t.length && (t = "0" + t), t } return e.getUTCFullYear() + "-" + t(1 + e.getUTCMonth()) + "-" + t(e.getUTCDate()) + "T" + t(e.getUTCHours()) + ":" + t(e.getUTCMinutes()) + ":" + t(e.getUTCSeconds()) + "." + ((e.getUTCMilliseconds() / 1e3).toFixed(3) + "").slice(2, 5) + "Z" }(), iKey: e, name: "Microsoft.ApplicationInsights." + e.replace(/-/g, "") + "." + t, sampleRate: 100, tags: n, data: { baseData: { ver: 2 } } } } var h = d.url || y.src; if (h) { function a(e) { var t, n, a, i, r, o, s, c, u, p, l; g = !0, m.queue = [], f || (f = !0, t = h, s = function () { var e = {}, t = d.connectionString; if (t) for (var n = t.split(";"), a = 0; a < n.length; a++) { var i = n[a].split("="); 2 === i.length && (e[i[0][b]()] = i[1]) } if (!e[C]) { var r = e.endpointsuffix, o = r ? e.location : null; e[C] = "https://" + (o ? o + "." : "") + "dc." + (r || "services.visualstudio.com") } return e }(), c = s[D] || d[D] || "", u = s[C], p = u ? u + "/v2/track" : d.endpointUrl, (l = []).push((n = "SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)", a = t, i = p, (o = (r = v(c, "Exception")).data).baseType = "ExceptionData", o.baseData.exceptions = [{ typeName: "SDKLoadFailed", message: n.replace(/\./g, "-"), hasFullStack: !1, stack: n + "\nSnippet failed to load [" + a + "] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: " + (S && S.pathname || "_unknown_") + "\nEndpoint: " + i, parsedStack: [] }], r)), l.push(function (e, t, n, a) { var i = v(c, "Message"), r = i.data; r.baseType = "MessageData"; var o = r.baseData; return o.message = 'AI (Internal): 99 message:"' + ("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) (" + n + ")").replace(/\"/g, "") + '"', o.properties = { endpoint: a }, i }(0, 0, t, p)), function (e, t) { if (JSON) { var n = T.fetch; if (n && !y.useXhr) n(t, { method: N, body: JSON.stringify(e), mode: "cors" }); else if (XMLHttpRequest) { var a = new XMLHttpRequest; a.open(N, t), a.setRequestHeader("Content-type", "application/json"), a.send(JSON.stringify(e)) } } }(l, p)) } function i(e, t) { f || setTimeout(function () { !t && m.core || a() }, 500) } var e = function () { var n = l.createElement(k); n.src = h; var e = y[w]; return !e && "" !== e || "undefined" == n[w] || (n[w] = e), n.onload = i, n.onerror = a, n.onreadystatechange = function (e, t) { "loaded" !== n.readyState && "complete" !== n.readyState || i(0, t) }, n }(); y.ld < 0 ? l.getElementsByTagName("head")[0].appendChild(e) : setTimeout(function () { l.getElementsByTagName(k)[0].parentNode.appendChild(e) }, y.ld || 0) } try { m.cookie = l.cookie } catch (p) { } function t(e) { for (; e.length;)!function (t) { m[t] = function () { var e = arguments; g || m.queue.push(function () { m[t].apply(m, e) }) } }(e.pop()) } var n = "track", r = "TrackPage", o = "TrackEvent"; t([n + "Event", n + "PageView", n + "Exception", n + "Trace", n + "DependencyData", n + "Metric", n + "PageViewPerformance", "start" + r, "stop" + r, "start" + o, "stop" + o, "addTelemetryInitializer", "setAuthenticatedUserContext", "clearAuthenticatedUserContext", "flush"]), m.SeverityLevel = { Verbose: 0, Information: 1, Warning: 2, Error: 3, Critical: 4 }; var s = (d.extensionConfig || {}).ApplicationInsightsAnalytics || {}; if (!0 !== d[I] && !0 !== s[I]) { var c = "onerror"; t(["_" + c]); var u = T[c]; T[c] = function (e, t, n, a, i) { var r = u && u(e, t, n, a, i); return !0 !== r && m["_" + c]({ message: e, url: t, lineNumber: n, columnNumber: a, error: i }), r }, d.autoExceptionInstrumented = !0 } return m }(y.cfg); function a() { y.onInit && y.onInit(n) } (T[t] = n).queue && 0 === n.queue.length ? (n.queue.push(a), n.trackPageView({})) : a() }(window, document, {
+      src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+       name: "dadosabertos", // Global SDK Instance name defaults to "appInsights" when not supplied
+      // ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+      // useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+      crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+      // onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
+      cfg: { // Application Insights Configuration
+        instrumentationKey: "4e0fa8a9-3335-4bf7-9f4c-bdae8a5be8d8"
+      }
+    });
+  </script>
+
+    <title>Eleições 2022 - Planos de governo</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <style type="text/css">
+        /* Nuvens div */
+        #imggroup {
+            width: 100%;
+            height: auto;
+            border: 5px solid rgb(67, 129, 252);
+            display: inline-block;
+        }
+
+        img {
+            width: 60%;
+            margin: 25px;
+        }
+
+        /* Dropdown Button */
+        .form-select {
+            max-width: 300px;
+        }
+
+        .center {
+            text-align: center;
+            margin: auto;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+        }
+
+        body {
+            background-color: #d6d4d4;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function updateNuvems() {
+            var estado = document.querySelector('#estadoDropdown').value;
+            window.location.href = "./index.html?" + estado;
+        }
+
+
+        function updateImages() {
+            let params = new URLSearchParams(document.location.search);
+            let querystring = [params.get("estado")];
+
+            estado = querystring[0];
+            if (estado!=null){
+            var imageblock = document.getElementById('imggroup');
+
+            jsonimgs = {"AC":["2022AC10001595336.png","2022AC10001595336freq.png","2022AC10001601556.png","2022AC10001601556freq.png","2022AC10001606307.png","2022AC10001606307freq.png","2022AC10001612476.png","2022AC10001612476freq.png","2022AC10001616169.png","2022AC10001616169freq.png","2022AC10001623440.png","2022AC10001623440freq.png","2022AC10001639519.png","2022AC10001639519freq.png"],"AL":["2022AL20001610327.png","2022AL20001610327freq.png","2022AL20001651898.png","2022AL20001651898freq.png","2022AL20001653458.png","2022AL20001653458freq.png","2022AL20001695808.png","2022AL20001695808freq.png","2022AL20001697076.png","2022AL20001697076freq.png","2022AL20001697934.png","2022AL20001697934freq.png"],"AM":["2022AM40001610345.png","2022AM40001610345freq.png","2022AM40001618329.png","2022AM40001618329freq.png","2022AM40001639064.png","2022AM40001639064freq.png","2022AM40001643027.png","2022AM40001643027freq.png","2022AM40001719168.png","2022AM40001719168freq.png","2022AM40001719317.png","2022AM40001719317freq.png"],"AP":["2022AP30001610045.png","2022AP30001610045freq.png","2022AP30001619676.png","2022AP30001619676freq.png","2022AP30001620571.png","2022AP30001620571freq.png","2022AP30001639521.png","2022AP30001639521freq.png","2022AP30001643108.png","2022AP30001643108freq.png","2022AP30001718032.png","2022AP30001718032freq.png"],"BA":["2022BA50001600527.png","2022BA50001600527freq.png","2022BA50001603638.png","2022BA50001603638freq.png","2022BA50001604884.png","2022BA50001604884freq.png","2022BA50001609248.png","2022BA50001609248freq.png","2022BA50001695915.png","2022BA50001695915freq.png","2022BA50001719849.png","2022BA50001719849freq.png"],"BR":["2022BR280001600167.png","2022BR280001600167freq.png","2022BR280001600179.png","2022BR280001600179freq.png","2022BR280001602702.png","2022BR280001602702freq.png","2022BR280001603612.png","2022BR280001603612freq.png","2022BR280001607829.png","2022BR280001607829freq.png","2022BR280001607831.png","2022BR280001607831freq.png","2022BR280001607833.png","2022BR280001607833freq.png","2022BR280001618036.png","2022BR280001618036freq.png","2022BR280001644128.png","2022BR280001644128freq.png","2022BR280001655452.png","2022BR280001655452freq.png","2022BR280001677435.png","2022BR280001677435freq.png","2022BR280001734029.png","2022BR280001734029freq.png"],"CE":["2022CE60001608845.png","2022CE60001608845freq.png","2022CE60001608950.png","2022CE60001608950freq.png","2022CE60001612926.png","2022CE60001612926freq.png","2022CE60001633585.png","2022CE60001633585freq.png","2022CE60001634109.png","2022CE60001634109freq.png","2022CE60001692640.png","2022CE60001692640freq.png"],"ES":["2022ES80001606304.png","2022ES80001606304freq.png","2022ES80001609415.png","2022ES80001609415freq.png","2022ES80001649123.png","2022ES80001649123freq.png","2022ES80001713735.png","2022ES80001713735freq.png","2022ES80001721262.png","2022ES80001721262freq.png","2022ES80001721631.png","2022ES80001721631freq.png"],"GO":["2022GO90001615815.png","2022GO90001615815freq.png","2022GO90001618706.png","2022GO90001618706freq.png","2022GO90001646326.png","2022GO90001646326freq.png","2022GO90001648642.png","2022GO90001648642freq.png","2022GO90001651833.png","2022GO90001651833freq.png","2022GO90001674691.png","2022GO90001674691freq.png","2022GO90001675056.png","2022GO90001675056freq.png","2022GO90001695572.png","2022GO90001695572freq.png","2022GO90001712074.png","2022GO90001712074freq.png"],"MA":["2022MA100001599612.png","2022MA100001599612freq.png","2022MA100001600008.png","2022MA100001600008freq.png","2022MA100001600504.png","2022MA100001600504freq.png","2022MA100001605313.png","2022MA100001605313freq.png","2022MA100001609046.png","2022MA100001609046freq.png","2022MA100001615758.png","2022MA100001615758freq.png","2022MA100001667487.png","2022MA100001667487freq.png","2022MA100001713289.png","2022MA100001713289freq.png"],"MG":["2022MG130001615039.png","2022MG130001615039freq.png","2022MG130001615084.png","2022MG130001615084freq.png","2022MG130001621812.png","2022MG130001621812freq.png","2022MG130001633534.png","2022MG130001633534freq.png","2022MG130001649894.png","2022MG130001649894freq.png","2022MG130001650894.png","2022MG130001650894freq.png","2022MG130001693598.png","2022MG130001693598freq.png","2022MG130001701690.png","2022MG130001701690freq.png","2022MG130001713407.png","2022MG130001713407freq.png","2022MG130001713602.png","2022MG130001713602freq.png"],"MS":["2022MS120001596872.png","2022MS120001596872freq.png","2022MS120001618900.png","2022MS120001618900freq.png","2022MS120001635628.png","2022MS120001635628freq.png","2022MS120001646278.png","2022MS120001646278freq.png","2022MS120001649554.png","2022MS120001649554freq.png","2022MS120001652149.png","2022MS120001652149freq.png","2022MS120001674596.png","2022MS120001674596freq.png"],"MT":["2022MT110001611936.png","2022MT110001611936freq.png","2022MT110001719846.png","2022MT110001719846freq.png","2022MT110001722727.png","2022MT110001722727freq.png"],"PA":["2022PA140001596649.png","2022PA140001596649freq.png","2022PA140001604398.png","2022PA140001604398freq.png","2022PA140001650094.png","2022PA140001650094freq.png","2022PA140001650519.png","2022PA140001650519freq.png","2022PA140001651993.png","2022PA140001651993freq.png","2022PA140001721579.png","2022PA140001721579freq.png","2022PA140001721635.png","2022PA140001721635freq.png","2022PA140001721685.png","2022PA140001721685freq.png","2022PA140001723383.png","2022PA140001723383freq.png"],"PB":["2022PB150001597600.png","2022PB150001597600freq.png","2022PB150001613757.png","2022PB150001613757freq.png","2022PB150001621388.png","2022PB150001621388freq.png","2022PB150001635959.png","2022PB150001635959freq.png","2022PB150001636464.png","2022PB150001636464freq.png","2022PB150001643180.png","2022PB150001643180freq.png","2022PB150001718119.png","2022PB150001718119freq.png","2022PB150001718244.png","2022PB150001718244freq.png"],"PE":["2022PE170001601203.png","2022PE170001601203freq.png","2022PE170001602587.png","2022PE170001602587freq.png","2022PE170001604087.png","2022PE170001604087freq.png","2022PE170001604111.png","2022PE170001604111freq.png","2022PE170001610442.png","2022PE170001610442freq.png","2022PE170001613254.png","2022PE170001613254freq.png","2022PE170001618087.png","2022PE170001618087freq.png","2022PE170001618273.png","2022PE170001618273freq.png","2022PE170001715331.png","2022PE170001715331freq.png","2022PE170001715590.png","2022PE170001715590freq.png","2022PE170001717342.png","2022PE170001717342freq.png"],"PI":["2022PI180001600497.png","2022PI180001600497freq.png","2022PI180001601250.png","2022PI180001601250freq.png","2022PI180001604027.png","2022PI180001604027freq.png","2022PI180001613545.png","2022PI180001613545freq.png","2022PI180001643494.png","2022PI180001643494freq.png","2022PI180001645030.png","2022PI180001645030freq.png","2022PI180001713460.png","2022PI180001713460freq.png","2022PI180001713732.png","2022PI180001713732freq.png","2022PI180001718004.png","2022PI180001718004freq.png"],"PR":["2022PR160001600815.png","2022PR160001600815freq.png","2022PR160001603284.png","2022PR160001603284freq.png","2022PR160001614467.png","2022PR160001614467freq.png","2022PR160001621842.png","2022PR160001621842freq.png","2022PR160001621857.png","2022PR160001621857freq.png","2022PR160001654909.png","2022PR160001654909freq.png","2022PR160001654981.png","2022PR160001654981freq.png","2022PR160001717338.png","2022PR160001717338freq.png","2022PR160001717339.png","2022PR160001717339freq.png"],"RJ":["2022RJ190001600399.png","2022RJ190001600399freq.png","2022RJ190001609389.png","2022RJ190001609389freq.png","2022RJ190001609712.png","2022RJ190001609712freq.png","2022RJ190001614665.png","2022RJ190001614665freq.png","2022RJ190001639537.png","2022RJ190001639537freq.png","2022RJ190001714872.png","2022RJ190001714872freq.png","2022RJ190001716773.png","2022RJ190001716773freq.png","2022RJ190001723484.png","2022RJ190001723484freq.png"],"RN":["2022RN200001608705.png","2022RN200001608705freq.png","2022RN200001608810.png","2022RN200001608810freq.png","2022RN200001613165.png","2022RN200001613165freq.png","2022RN200001613178.png","2022RN200001613178freq.png","2022RN200001651786.png","2022RN200001651786freq.png","2022RN200001668305.png","2022RN200001668305freq.png","2022RN200001696301.png","2022RN200001696301freq.png"],"RO":["2022RO220001609507.png","2022RO220001609507freq.png","2022RO220001609511.png","2022RO220001609511freq.png","2022RO220001635569.png","2022RO220001635569freq.png","2022RO220001713811.png","2022RO220001713811freq.png","2022RO220001719268.png","2022RO220001719268freq.png","2022RO220001723308.png","2022RO220001723308freq.png"],"RR":["2022RR230001602186.png","2022RR230001602186freq.png","2022RR230001604255.png","2022RR230001604255freq.png","2022RR230001610641.png","2022RR230001610641freq.png","2022RR230001610816.png","2022RR230001610816freq.png","2022RR230001670967.png","2022RR230001670967freq.png"],"RS":["2022RS210001604536.png","2022RS210001604536freq.png","2022RS210001605930.png","2022RS210001605930freq.png","2022RS210001606124.png","2022RS210001606124freq.png","2022RS210001609847.png","2022RS210001609847freq.png","2022RS210001609945.png","2022RS210001609945freq.png","2022RS210001615206.png","2022RS210001615206freq.png","2022RS210001619618.png","2022RS210001619618freq.png","2022RS210001697029.png","2022RS210001697029freq.png","2022RS210001697794.png","2022RS210001697794freq.png","2022RS210001737241.png","2022RS210001737241freq.png"],"SC":["2022SC240001605909.png","2022SC240001605909freq.png","2022SC240001610772.png","2022SC240001610772freq.png","2022SC240001610793.png","2022SC240001610793freq.png","2022SC240001611127.png","2022SC240001611127freq.png","2022SC240001611133.png","2022SC240001611133freq.png","2022SC240001611148.png","2022SC240001611148freq.png","2022SC240001645017.png","2022SC240001645017freq.png","2022SC240001647445.png","2022SC240001647445freq.png","2022SC240001679805.png","2022SC240001679805freq.png","2022SC240001679858.png","2022SC240001679858freq.png"],"SE":["2022SE260001600202.png","2022SE260001600202freq.png","2022SE260001612779.png","2022SE260001612779freq.png","2022SE260001617899.png","2022SE260001617899freq.png","2022SE260001634213.png","2022SE260001634213freq.png","2022SE260001635961.png","2022SE260001635961freq.png","2022SE260001666399.png","2022SE260001666399freq.png","2022SE260001690862.png","2022SE260001690862freq.png"],"SP":["2022SP250001597898.png","2022SP250001597898freq.png","2022SP250001601996.png","2022SP250001601996freq.png","2022SP250001609938.png","2022SP250001609938freq.png","2022SP250001612450.png","2022SP250001612450freq.png","2022SP250001612465.png","2022SP250001612465freq.png","2022SP250001615967.png","2022SP250001615967freq.png","2022SP250001638553.png","2022SP250001638553freq.png","2022SP250001639534.png","2022SP250001639534freq.png","2022SP250001640086.png","2022SP250001640086freq.png","2022SP250001643275.png","2022SP250001643275freq.png","2022SP250001652196.png","2022SP250001652196freq.png","2022SP250001693024.png","2022SP250001693024freq.png","2022SP250001723181.png","2022SP250001723181freq.png","2022SP250001725452.png","2022SP250001725452freq.png"]}
+        
+            jsonimgs[estado].forEach(element => {
+                var img = document.createElement('img');
+                img.src = './output/' + element;
+                img.appendChild(document.createElement("br"))
+                imageblock.appendChild(img);
+            });
+        }
+        }
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#estadoDropdown').select2();
+        });
+    </script>
+</head>
+
+<body onload="updateImages()">
+    <br>
+    <div class="center">
+        <h1>Nuvem de palavras dos planos de governo* das eleições de 2022</h1>
+        <h5>*somente Governo/Presidencia fazem planos de governo</h5>
+        <select id="estadoDropdown" class="form-select" aria-label="Default select example">
+            <option value="&estado=BR" selected="selected">Selecione o estado</option>
+            <option value="&estado=BR">Brasil</option>
+            <option value="&estado=AC">Acre</option>
+            <option value="&estado=AL">Alagoas</option>
+            <option value="&estado=AM">Amazonas</option>
+            <option value="&estado=AP">Amapá</option>
+            <option value="&estado=BA">Bahia</option>
+            <option value="&estado=CE">Ceará</option>
+            <option value="&estado=ES">Espirito Santo</option>
+            <option value="&estado=GO">Goiás</option>
+            <option value="&estado=MA">Maranhão</option>
+            <option value="&estado=MG">Minas Gerais</option>
+            <option value="&estado=MS">Mato Grosso to Sul</option>
+            <option value="&estado=MT">Mato Grosso</option>
+            <option value="&estado=PA">Pará</option>
+            <option value="&estado=PB">Paraíba</option>
+            <option value="&estado=PE">Pernambuco</option>
+            <option value="&estado=PI">Piauí</option>
+            <option value="&estado=PR">Paraná</option>
+            <option value="&estado=RJ">Rio de Janeiro</option>
+            <option value="&estado=RN">Rio Grande do Norte</option>
+            <option value="&estado=RO">Rondonia</option>
+            <option value="&estado=RR">Roraima</option>
+            <option value="&estado=RS">Rio Grande do Sul</option>
+            <option value="&estado=SE">Sergipe</option>
+            <option value="&estado=SP">São Paulo</option>
+        </select>
+
+
+        <input class="btn btn-primary" type="button" value="Atualizar imagens" onclick="updateNuvems()">
+
+
+        <div id="imggroup" class="center">
+
+        </div>
+    
+        </br>
+        <!--Section: FAQ-->
+        <section>
+            <h3 class="text-center mb-4 pb-2 text-primary fw-bold">Perguntas frequentes</h3>
+            <p class="text-center mb-5">
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i>1. Qual é a fonte
+                        dos dados?
+                    </h6>
+                    <p>Planos de governo disponibilizados pelo <strong><u><a
+                                    href="https://dados.gov.br/dataset/candidatos-2022">site do TSE</a></u></strong>.
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i>2. Como são criadas as
+                        nuvems de palavras?</h6>
+                    <p>Para cada plano de governo, extraio os textos do arquivo .pdf e depois gero a nuvem utilizando
+                        com base nas palavras mais frequentes de cada programa. Esse processo é feito com a linguagem de
+                        programação Python e as seguintes bibliotecas foram utilizadas(<strong><u><a
+                                    href="https://pypi.org/project/PyPDF2/">PyPDF2</a></u></strong> e <strong><u><a
+                                    href="https://pypi.org/project/wordcloud/">wordcloud</a></u></strong>)
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i>3. Alguma palavra foi
+                        excluída da análise?
+                    </h6>
+                    <p>Sim, <strong><u><a
+                                    href="https://raw.githubusercontent.com/stopwords-iso/stopwords-pt/master/stopwords-pt.txt">todas
+                                    essas palavras</a></u></strong> foram removidas dos programas de governo antes da
+                        geração da nuvem.</p>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i>4. Por que algumas
+                        nuvems estão com palavras incompletas?
+                    </h6>
+                    <p>Por dois principais motivos, o arquivo PDF foi gerado de uma forma que os textos não são
+                        facilmente identificados pelo biblioteca que utilizei ou o arquivo PDF foi gerado como imagem e
+                        não como texto.<strong> Não fiz nenhum tipo de validação pra garantir que todas palavras do PDF
+                            estão sendo lidas corretamente, portanto não tirem muitas conclusões desses nuvems, pois é
+                            um projeto nada acadêmico, somente um hobbie. 🤓 </strong>
+                    </p>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i>5. Onde encontro
+                        mais detalhes do projeto?
+                    </h6>
+                    <p>No repositório do <a
+                            href='https://github.com/wxwr/wordcloud_govplan_elections2022'>github.com/wxwr/wordcloud_govplan_elections2022</a>
+                    </p>
+                </div>
+
+
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i>6. Por que a nuvem de
+                        palavras não foi gerada para alguns candidatos?
+                    </h6>
+                    <p>Diversos motivos, por exemplo, o arquivo do programa de governo é a carteira de motorista do
+                        candidato🤣, o PDF não permite fazer cópia do texto, o arquivo PDF está em má qualidade ou é uma
+                        imagem, etc. Segue a lista desses candidatos/arquivos: <br>
+
+                        <br>2022AL20001717270.pdf - GOVERNADOR - BOMBEIRO LUCIANO FONTES - APTO - PMB
+                        <br>2022AM40001619528.pdf - GOVERNADOR - WILSON LIMA - APTO - UNIÃO
+                        <br>2022BA50001603012.pdf - DEPUTADO ESTADUAL - SGT RIVONEI CASTRO - APTO - AVANTE
+                        <br>2022BA50001644124.pdf - DEPUTADO ESTADUAL - LUZIANE ESCRITORA - APTO - PMB
+                        <br>2022BR280001612393.pdf - PRESIDENTE - CIRO GOMES - APTO - PDT
+                        <br>2022ES80001723584.pdf - GOVERNADOR - GUERINO ZANON - APTO - PSD
+                        <br>2022MA100001604435.pdf - GOVERNADOR - EDIVALDO - APTO - PSD
+                        <br>2022MG130001644653.pdf - GOVERNADOR - VANESSA PORTUGAL - APTO - PSTU
+                        <br>2022MS120001714229.pdf - GOVERNADOR - CAPITÃO CONTAR - APTO - PRTB
+                        <br>2022PA140001723385.pdf - GOVERNADOR - SOFIA COUTO - APTO - PMB
+                        <br>2022PR160001603358.pdf - DEPUTADO ESTADUAL - PAULO GOMES DA TV - APTO - PP
+                        <br>2022RN200001695666.pdf - GOVERNADOR - RODRIGO VIEIRA - APTO - DC
+                        <br>2022RN200001712602.pdf - GOVERNADOR - DANNIEL MORAIS - APTO - PSOL
+                        <br>2022RO220001647595.pdf - GOVERNADOR - MARCOS ROGERIO - APTO - PL
+                        <br>2022RS210001604469.pdf - GOVERNADOR - EDEGAR PRETTO - APTO - PT
+                        <br>2022RS210001609934.pdf - GOVERNADOR - ONYX LORENZONI - APTO - PL
+                        <br>2022SE260001690206.pdf - GOVERNADOR - VALMIR DE FRANCISQUINHO - APTO - PL
+
+
+                    </p>
+                </div>
+
+            
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i>
+                        <!-- 8  -->
+                    </h6>
+                    <!-- <p>response</p> -->
+                </div>
+
+
+
+            </div>
+        </section>
+        <!--Section: FAQ-->
+    </div>
+</body>
+
+</html>

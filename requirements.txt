@@ -1,0 +1,5 @@
+pip3.10 install pypdf2
+pip3.10 install matplotlib
+pip3.10 install pandas
+pip3.10 install wordcloud
+pip3.10 install nltk
