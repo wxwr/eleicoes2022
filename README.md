@@ -1,5 +1,5 @@
 # Wordcloud for government plans 
-URL: https://wxwr.github.io/wordcloud_govplan_elections2022/
+URL: https://wxwr.github.io/wordcloud_govplans_elections2022/
 
 Datasource: https://dados.gov.br/dataset/candidatos-2022
 
